@@ -5,6 +5,7 @@ A comprehensive collection of Go programming exercises and examples designed to 
 ## Project Structure
 
 - `hello-world/` - Basic Hello World program with multi-language support
+- `integers/` - Working with integers, basic arithmetic operations
 - *(More modules will be added as the project progresses)*
 
 ## Getting Started
@@ -26,6 +27,12 @@ cd go-fundamentals
 ```bash
 cd hello-world
 go run hello.go
+```
+
+3. Run the integers example:
+```bash
+cd integers
+go test
 ```
 
 ### Running Tests
@@ -63,6 +70,20 @@ fmt.Println(Hello("Elodie", "Spanish"))  // Output: Hola, Elodie
 fmt.Println(Hello("Louis", "French"))    // Output: Bonjour, Louis
 ```
 
+### Integers
+
+The integers example demonstrates:
+- Working with integer types
+- Basic arithmetic operations
+- Function parameters and return values
+- Example tests for documentation
+
+```go
+// Example usage
+sum := Add(1, 5)
+fmt.Println(sum)  // Output: 6
+```
+
 ## Learning Goals
 
 This project aims to cover comprehensive Go fundamentals including:
@@ -74,6 +95,8 @@ This project aims to cover comprehensive Go fundamentals including:
 - Control structures (switch statements)
 - Testing with the `testing` package
 - Test-driven development (TDD)
+- Integer types and basic arithmetic
+- Example tests for documentation
 
 **Planned Topics:**
 - Variables, constants, and basic data types
