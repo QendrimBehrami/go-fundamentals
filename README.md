@@ -6,6 +6,7 @@ A comprehensive collection of Go programming exercises and examples designed to 
 
 - `hello-world/` - Basic Hello World program with multi-language support
 - `integers/` - Working with integers, basic arithmetic operations
+- `iteration/` - For loops, iteration patterns, and string building
 - *(More modules will be added as the project progresses)*
 
 ## Getting Started
@@ -32,6 +33,12 @@ go run hello.go
 3. Run the integers example:
 ```bash
 cd integers
+go test
+```
+
+4. Run the iteration example:
+```bash
+cd iteration
 go test
 ```
 
@@ -84,6 +91,20 @@ sum := Add(1, 5)
 fmt.Println(sum)  // Output: 6
 ```
 
+### Iteration
+
+The iteration example demonstrates:
+- For loops and range iteration
+- String building with `strings.Builder`
+- Benchmark testing
+- Performance considerations
+
+```go
+// Example usage
+result := Repeat("a", 5)
+fmt.Println(result)  // Output: aaaaa
+```
+
 ## Learning Goals
 
 This project aims to cover comprehensive Go fundamentals including:
@@ -97,6 +118,9 @@ This project aims to cover comprehensive Go fundamentals including:
 - Test-driven development (TDD)
 - Integer types and basic arithmetic
 - Example tests for documentation
+- For loops and iteration patterns
+- String building and performance optimization
+- Benchmark testing
 
 **Planned Topics:**
 - Variables, constants, and basic data types
@@ -117,7 +141,7 @@ This project aims to cover comprehensive Go fundamentals including:
 
 ## Progress
 
-🟢 **Completed:** Hello World with multi-language support and testing  
+🟢 **Completed:** Hello World, Integers, and Iteration chapters with comprehensive testing  
 🟡 **In Progress:** Expanding fundamental concepts  
 🔴 **Planned:** Advanced topics and real-world applications
 
