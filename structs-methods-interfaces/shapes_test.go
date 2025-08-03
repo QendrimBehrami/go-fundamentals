@@ -45,3 +45,24 @@ func TestArea(t *testing.T) {
 	}
 
 }
+
+func BenchmarkRectangleArea(b *testing.B) {
+	rectangle := Rectangle{Width: 12, Height: 6}
+	for b.Loop() {
+		rectangle.Area()
+	}
+}
+
+func BenchmarkCircleArea(b *testing.B) {
+	circle := Circle{Radius: 10}
+	for b.Loop() {
+		circle.Area()
+	}
+}
+
+func BenchmarkTriangleArea(b *testing.B) {
+	triangle := Triangle{SideA: 3, SideB: 4, SideC: 5}
+	for b.Loop() {
+		triangle.Area()
+	}
+}
