@@ -21,7 +21,8 @@ _(More modules will be added as the project progresses)_
 
 ### Prerequisites
 
-- Go 1.18 or newer installed ([download](https://golang.org/dl/))
+- Go 1.21 or newer installed ([download](https://golang.org/dl/))
+- This project uses Go 1.24.5 with modern features like the new benchmark API
 
 ### Clone the repository
 
@@ -94,7 +95,7 @@ go test -v
 
 ### Hello World
 
-The hello-world example demonstrates:
+The `hello-world` example demonstrates:
 
 - Basic function creation
 - String manipulation
@@ -110,7 +111,7 @@ fmt.Println(Hello("Louis", "French"))    // Output: Bonjour, Louis
 
 ### Integers
 
-The integers example demonstrates:
+The `ìntegers` example demonstrates:
 
 - Working with integer types
 - Basic arithmetic operations
@@ -125,7 +126,7 @@ fmt.Println(sum)  // Output: 6
 
 ### Iteration
 
-The iteration example demonstrates:
+The `iteration` example demonstrates:
 
 - For loops and range iteration
 - String building with `strings.Builder`
@@ -140,7 +141,7 @@ fmt.Println(result)  // Output: aaaaa
 
 ### Arrays and Slices
 
-The arrays-and-slices example demonstrates:
+The `arrays-and-slices` example demonstrates:
 
 - Declaring and using arrays and slices
 - Variadic functions
@@ -167,18 +168,60 @@ fmt.Println(sumsTails) // Output: [5 9]
 The `structs-methods-interfaces` example demonstrates:
 
 - Defining structs for geometric shapes (Rectangle, Circle, Triangle)
-- Implementing methods on structs
-- Using interfaces for polymorphism
-- Table-driven tests and subtests
+- Implementing methods with both value and pointer receivers
+- Using interfaces for polymorphism (`Shape` interface)
+- Advanced mathematical calculations (Heron's formula for triangle area)
+- Table-driven tests with subtests for comprehensive testing
+- Performance benchmarking with Go 1.24's new `b.Loop()` API
 
 ```go
-// Example usage
-rect := Rectangle{Width: 10, Height: 5}
-fmt.Println(rect.Area()) // Output: 50
+// Example usage - Shape interface polymorphism
+shapes := []Shape{
+    Rectangle{Width: 12, Height: 6},
+    Circle{Radius: 10},
+    Triangle{SideA: 3, SideB: 4, SideC: 5}, // Classic 3-4-5 right triangle
+}
 
-var s Shape = Circle{Radius: 3}
-fmt.Println(s.Area()) // Output: 28.274333882308138
+for _, shape := range shapes {
+    fmt.Printf("Area: %.2f, Perimeter: %.2f\n", shape.Area(), shape.Perimeter())
+}
+// Output:
+// Area: 72.00, Perimeter: 36.00
+// Area: 314.16, Perimeter: 62.83
+// Area: 6.00, Perimeter: 12.00
 ```
+
+**Key Concepts Covered:**
+
+- **Interface satisfaction**: All shapes implement `Area()` and `Perimeter()`
+- **Mathematical accuracy**: Triangle uses Heron's formula with three sides
+- **Test-driven development**: Comprehensive tests with known values (3-4-5 triangle)
+- **Performance testing**: Benchmarks showing ~1ns/op for simple operations
+
+## Performance & Benchmarking
+
+This project includes comprehensive benchmarking to understand Go's performance characteristics:
+
+````bash
+```bash
+# Run benchmarks for all modules
+go test -bench=. ./...
+
+# Run benchmarks with memory allocation stats
+go test -bench=. -benchmem ./...
+
+# Example benchmark results (structs-methods-interfaces on Apple M3):
+# BenchmarkRectangleArea-8   	1000000000	         1.000 ns/op
+# BenchmarkCircleArea-8      	1000000000	         1.000 ns/op
+# BenchmarkTriangleArea-8    	1000000000	         1.005 ns/op
+````
+
+**Performance Insights:**
+
+- Apple M3 processor delivers exceptional performance for mathematical operations
+- Go compiler optimizations make even complex calculations (Heron's formula) extremely fast
+- All geometric calculations complete in ~1 nanosecond, showing the power of modern hardware
+- The difference between simple arithmetic and `math.Sqrt()` is negligible on ARM64
 
 ## Learning Goals
 
@@ -196,10 +239,13 @@ This project aims to cover comprehensive Go fundamentals including:
 - Example tests for documentation
 - For loops and iteration patterns
 - String building and performance optimization
-- Benchmark testing
+- Benchmark testing with Go 1.24's new API
 - Arrays and slices: declaration, usage, and algorithms
 - Variadic functions and edge case handling
-- Structs and methods
+- Structs and methods (value and pointer receivers)
+- Interface design and polymorphism
+- Advanced mathematical implementations (Heron's formula)
+- Performance benchmarking and optimization analysis
 
 **Planned Topics:**
 
