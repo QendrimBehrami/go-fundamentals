@@ -1,5 +1,10 @@
 # Go Fundamentals
 
+[![Go Version](https://img.shields.io/badge/Go-1.24.5-00ADD8?style=flat&logo=go)](https://golang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Go Report Card](https://goreportcard.com/badge/github.com/QendrimBehrami/go-fundamentals)](https://goreportcard.com/report/github.com/QendrimBehrami/go-fundamentals)
+[![Tests](https://github.com/QendrimBehrami/go-fundamentals/workflows/Tests/badge.svg)](https://github.com/QendrimBehrami/go-fundamentals/actions)
+
 A comprehensive collection of Go programming exercises and examples designed to cover most fundamental aspects of the Go programming language. This is a personal learning project that will eventually include extensive examples and exercises covering the core concepts of Go.
 
 ## Project Structure
