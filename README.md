@@ -12,7 +12,7 @@ A comprehensive collection of Go programming exercises and examples designed to 
 - `hello-world/` - Basic Hello World program with multi-language support
 - `integers/` - Working with integers, basic arithmetic operations
 - `iteration/` - For loops, iteration patterns, and string building
-- `arrays-and-slices/` - Arrays, slices, variadic functions, and related algorithms
+- `arrays-and-slices/` - Arrays, slices, variadic fu nctions, and related algorithms
 - `structs-methods-interfaces/` - Structs, methods, interfaces, and geometric calculations
 
 _(More modules will be added as the project progresses)_
