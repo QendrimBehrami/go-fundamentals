@@ -194,12 +194,12 @@ This project aims to cover comprehensive Go fundamentals including:
 - Benchmark testing
 - Arrays and slices: declaration, usage, and algorithms
 - Variadic functions and edge case handling
+- Structs and methods
 
 **Planned Topics:**
 
 - Variables, constants, and basic data types
 - Arrays, slices, and maps
-- Structs and methods
 - Interfaces and polymorphism
 - Pointers and memory management
 - Error handling patterns
