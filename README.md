@@ -4,40 +4,48 @@ A comprehensive collection of Go programming exercises and examples designed to 
 
 ## Project Structure
 
+- `hello-world/` - Basic Hello World program with multi-language support
+- `integers/` - Working with integers, basic arithmetic operations
 - `iteration/` - For loops, iteration patterns, and string building
-  `hello-world/` - Basic Hello World program with multi-language support
-  `integers/` - Working with integers, basic arithmetic operations
-  `arrays-and-slices/` - Arrays, slices, variadic functions, and related algorithms
-  `iteration/` - For loops, iteration patterns, and string building
-  _(More modules will be added as the project progresses)_
 - `arrays-and-slices/` - Arrays, slices, variadic functions, and related algorithms
-- _(More modules will be added as the project progresses)_
+- `structs-methods-interfaces/` - Structs, methods, interfaces, and geometric calculations
+
+_(More modules will be added as the project progresses)_
 
 ## Getting Started
 
 ### Prerequisites
 
-4. Run the arrays-and-slices example:
+- Go 1.18 or newer installed ([download](https://golang.org/dl/))
+
+### Clone the repository
+
+```bash
+git clone https://github.com/QendrimBehrami/go-fundamentals.git
+cd go-fundamentals
+```
+
+### Running Examples & Tests
+
+To run the Hello World example:
+
+```bash
+cd hello-world
+go run hello.go
+```
+
+To run tests for a specific module (e.g., arrays-and-slices):
 
 ```bash
 cd arrays-and-slices
 go test
 ```
 
-5. Run the iteration example:
+To run all tests in the project:
 
 ```bash
-cd iteration
-go test
+go test ./...
 ```
-
-1. Clone the repository:
-
-````bash
-```bash
-cd hello-world
-go run hello.go
-````
 
 3. Run the integers example:
 
@@ -149,6 +157,24 @@ sumsTails := SumAllTails([]int{1,2,3}, []int{0,9})
 fmt.Println(sumsTails) // Output: [5 9]
 ```
 
+### Structs, Methods, and Interfaces
+
+The `structs-methods-interfaces` example demonstrates:
+
+- Defining structs for geometric shapes (Rectangle, Circle, Triangle)
+- Implementing methods on structs
+- Using interfaces for polymorphism
+- Table-driven tests and subtests
+
+```go
+// Example usage
+rect := Rectangle{Width: 10, Height: 5}
+fmt.Println(rect.Area()) // Output: 50
+
+var s Shape = Circle{Radius: 3}
+fmt.Println(s.Area()) // Output: 28.274333882308138
+```
+
 ## Learning Goals
 
 This project aims to cover comprehensive Go fundamentals including:
@@ -189,7 +215,7 @@ This project aims to cover comprehensive Go fundamentals including:
 
 ## Progress
 
-🟢 **Completed:** Hello World, Integers, Iteration, and Arrays & Slices chapters with comprehensive testing  
+🟢 **Completed:** Hello World, Integers, Iteration, Arrays & Slices, Structs/Methods/Interfaces chapters with comprehensive testing  
 🟡 **In Progress:** Expanding fundamental concepts  
 🔴 **Planned:** Advanced topics and real-world applications
 
