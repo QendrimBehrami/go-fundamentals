@@ -12,8 +12,9 @@ A comprehensive collection of Go programming exercises and examples designed to 
 - `hello-world/` - Basic Hello World program with multi-language support
 - `integers/` - Working with integers, basic arithmetic operations
 - `iteration/` - For loops, iteration patterns, and string building
-- `arrays-and-slices/` - Arrays, slices, variadic fu nctions, and related algorithms
+- `arrays-and-slices/` - Arrays, slices, variadic functions, and related algorithms
 - `structs-methods-interfaces/` - Structs, methods, interfaces, and geometric calculations
+- `pointers-and-errors/` - Pointers, memory management, and error handling patterns
 
 _(More modules will be added as the project progresses)_
 
@@ -198,6 +199,47 @@ for _, shape := range shapes {
 - **Test-driven development**: Comprehensive tests with known values (3-4-5 triangle)
 - **Performance testing**: Benchmarks showing ~1ns/op for simple operations
 
+### Pointers and Errors
+
+The `pointers-and-errors` example demonstrates:
+
+- Understanding pointers and memory addresses
+- Value vs pointer receivers for methods
+- Error handling patterns in Go
+- Creating custom error types
+- Bitcoin wallet implementation with balance management
+- Deposit, withdraw, and balance operations
+- Error scenarios and edge case handling
+
+```go
+// Example usage - Bitcoin wallet with error handling
+wallet := Wallet{}
+
+wallet.Deposit(Bitcoin(10))
+fmt.Println(wallet.Balance()) // Output: 10 BTC
+
+err := wallet.Withdraw(Bitcoin(5))
+if err != nil {
+    fmt.Println("Error:", err)
+} else {
+    fmt.Println(wallet.Balance()) // Output: 5 BTC
+}
+
+// Attempting to withdraw more than available
+err = wallet.Withdraw(Bitcoin(100))
+if err != nil {
+    fmt.Println(err) // Output: insufficient funds
+}
+```
+
+**Key Concepts Covered:**
+
+- **Pointer receivers**: Methods that modify the receiver must use pointers
+- **Error handling**: Go's idiomatic error handling with explicit error checking
+- **Custom types**: Creating domain-specific types like `Bitcoin` for type safety
+- **Test-driven development**: Comprehensive error scenario testing
+- **Memory management**: Understanding when to use pointers vs values
+
 ## Performance & Benchmarking
 
 This project includes comprehensive benchmarking to understand Go's performance characteristics:
@@ -246,14 +288,14 @@ This project aims to cover comprehensive Go fundamentals including:
 - Interface design and polymorphism
 - Advanced mathematical implementations (Heron's formula)
 - Performance benchmarking and optimization analysis
+- Pointers and memory management
+- Error handling patterns and custom error types
+- Type safety with custom types (Bitcoin example)
 
 **Planned Topics:**
 
 - Variables, constants, and basic data types
-- Arrays, slices, and maps
-- Interfaces and polymorphism
-- Pointers and memory management
-- Error handling patterns
+- Maps and advanced data structures
 - Goroutines and concurrency
 - Channels and communication
 - File I/O operations
@@ -266,7 +308,7 @@ This project aims to cover comprehensive Go fundamentals including:
 
 ## Progress
 
-🟢 **Completed:** Hello World, Integers, Iteration, Arrays & Slices, Structs/Methods/Interfaces chapters with comprehensive testing  
+🟢 **Completed:** Hello World, Integers, Iteration, Arrays & Slices, Structs/Methods/Interfaces, Pointers & Errors chapters with comprehensive testing  
 🟡 **In Progress:** Expanding fundamental concepts  
 🔴 **Planned:** Advanced topics and real-world applications
 
