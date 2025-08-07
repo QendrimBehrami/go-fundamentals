@@ -15,6 +15,7 @@ A comprehensive collection of Go programming exercises and examples designed to 
 - `arrays-and-slices/` - Arrays, slices, variadic functions, and related algorithms
 - `structs-methods-interfaces/` - Structs, methods, interfaces, and geometric calculations
 - `pointers-and-errors/` - Pointers, memory management, and error handling patterns
+- `maps/` - Working with maps, custom dictionary types, error handling for lookups
 
 _(More modules will be added as the project progresses)_
 
@@ -239,6 +240,28 @@ if err != nil {
 - **Custom types**: Creating domain-specific types like `Bitcoin` for type safety
 - **Test-driven development**: Comprehensive error scenario testing
 - **Memory management**: Understanding when to use pointers vs values
+
+### Maps
+
+The `maps` example demonstrates:
+
+- Using Go's built-in map type
+- Implementing custom dictionary types
+- Error handling for missing keys
+- Table-driven tests for search and error scenarios
+
+```go
+// Example usage
+dictionary := Dictionary{"test": "this is just a test"}
+
+result, err := dictionary.Search("test")
+fmt.Println(result) // Output: this is just a test
+
+_, err = dictionary.Search("unknown")
+if err != nil {
+    fmt.Println(err) // Output: could not find the word you were looking for
+}
+```
 
 ## Performance & Benchmarking
 
